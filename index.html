@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>togyzkumalak — тоғызқұмалақ онлайн</title>
+<meta name="description" content="Тоғызқұмалақ онлайн: қозғалтқышпен ойна, партияңды талда, досыңмен онлайн ойна.">
+<meta property="og:title" content="togyzkumalak — тоғызқұмалақ онлайн">
+<meta property="og:description" content="Қозғалтқышпен ойна, партияны талда, досыңмен ойна.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#08090a">
+<style>
+:root{--bg:#f4f1ec;--card:#fff;--tx:#241a12;--mu:#7a6a5a;--bd:#e3dacf;--ac:#8a5a2b;--soft:#f0e6d8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17120d;--card:#221a13;--tx:#f1e8dd;--mu:#a8977f;--bd:#3a2e22;--ac:#d9a066;--soft:#33261a}}
+:root[data-theme="dark"]{--bg:#17120d;--card:#221a13;--tx:#f1e8dd;--mu:#a8977f;--bd:#3a2e22;--ac:#d9a066;--soft:#33261a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:560px;margin:0 auto;padding:0 14px}
+h1{font-size:28px;margin:22px 0 2px;letter-spacing:-.02em}
+.sub{color:var(--mu);margin:0 0 16px}
+.tabs{display:flex;gap:4px;margin-bottom:12px;border-bottom:1px solid var(--bd)}
+.tabs button{flex:1;border:0;background:none;padding:10px 4px;font:600 15px inherit;font-family:inherit;color:var(--mu);cursor:pointer;border-bottom:3px solid transparent}
+.tabs button.on{color:var(--tx);border-color:var(--ac)}
+.btn{border:0;border-radius:8px;padding:10px 16px;font:600 15px system-ui,sans-serif;cursor:pointer;background:var(--ac);color:#fff}
+.btn.g{background:var(--card);color:var(--tx);border:1px solid var(--bd);padding:8px 12px;font-size:14px}
+.btn:disabled{opacity:.5}
+textarea,.in{width:100%;border:1px solid var(--bd);border-radius:8px;padding:10px;font:15px system-ui,sans-serif;background:var(--card);color:var(--tx)}
+textarea{min-height:90px;resize:vertical}.in{width:auto}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.note{color:var(--mu);font-size:14px;margin:6px 0}
+details{margin:8px 0}summary{list-style:none;display:inline-block}
+.st{margin:12px 0 8px;font-weight:600}
+.bo{background:#dfa05a;border-radius:16px;padding:10px 8px 8px;color:#4a2e1a}
+.pb{display:flex;justify-content:space-between;align-items:baseline;padding:2px 6px 8px;font-weight:700}.pb b{font-size:26px}
+.gr{display:grid;grid-template-columns:repeat(9,1fr);gap:4px}
+.nm{text-align:center;font-weight:700;font-size:15px;padding:3px 0;min-height:26px}
+.pit{position:relative;width:100%;aspect-ratio:1/2.5;border:2px solid #b27a3d;border-radius:9px;background:#d6a066;padding:3px 1px 5px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;overflow:hidden;font:inherit}
+.pit small{position:absolute;top:3px;left:4px;font-size:11px;color:#7a5530}
+.pit:not(:disabled){cursor:pointer;background:#e4b47b}
+.pit.tz{background:#3a2a1c;border-color:#1f150c}.pit.tz small{color:#cfae85}
+.pit.mk{outline:3px solid #fff;outline-offset:-1px}
+.pit u{width:16px;height:16px;border:2px solid #9a7a58;border-radius:50%;margin-bottom:14px}
+.ds{display:flex;flex-wrap:wrap-reverse;justify-content:center;column-gap:2px;width:calc(var(--c)*var(--d) + (var(--c) - 1)*2px)}
+.ds i{width:var(--d);height:var(--d);margin-top:calc(var(--st) - var(--d));border-radius:50%;box-shadow:0 0 0 1px #2b1a0e88;background:radial-gradient(circle at 35% 30%,#8f5f3b,#472c19)}
+.bar{height:8px;border-radius:6px;background:#241a12;overflow:hidden;margin:6px 0}.bar div{height:100%;background:#f1e8dd}
+.bd{display:inline-block;border-radius:999px;padding:3px 10px;color:#fff;font-weight:700;font-size:13px;white-space:nowrap}
+.g0{background:#1fa89a}.g1{background:#2f9e6b}.g2{background:#4c8c2b}.g3{background:#5f9a4c}.g4{background:#6b8f4e}.g5{background:#dba52a}.g6{background:#d9692a}.g7{background:#d23b36}
+.mv{display:flex;align-items:center;gap:10px;padding:8px 6px;border-bottom:1px solid var(--bd);cursor:pointer}.mv.on{background:var(--soft)}
+.mv span:first-child{color:var(--mu);min-width:42px}.mv span:nth-child(2){flex:1}.mv small{color:var(--mu);min-width:36px;text-align:right}
+.list{max-height:320px;overflow:auto;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.chips span{border:1px solid var(--bd);border-radius:8px;padding:3px 9px;font-size:13px}
+.mg{margin:8px 0;padding:10px 12px;border-radius:12px;background:var(--card);border:1px solid var(--bd);white-space:pre-wrap;overflow-wrap:anywhere}.mg.u{background:var(--soft);margin-left:28px}.mg.a{margin-right:28px}.mg small{display:block;color:var(--mu);font-size:12px;margin-bottom:2px}
+footer{color:var(--mu);font-size:13px;text-align:center;padding:30px 0}
+/* ak-kөk */
+:root{--bg:#f3f7ff;--card:#fff;--tx:#0b1b3a;--mu:#5a6b8c;--bd:#dbe6fb;--ac:#1f6bff;--soft:#e8f0ff}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07122b;--card:#0e1d40;--tx:#eaf1ff;--mu:#8fa5d1;--bd:#1d3163;--ac:#4d8dff;--soft:#142a5c}}
+:root[data-theme="dark"]{--bg:#07122b;--card:#0e1d40;--tx:#eaf1ff;--mu:#8fa5d1;--bd:#1d3163;--ac:#4d8dff;--soft:#142a5c}
+body{background:linear-gradient(180deg,var(--soft) 0,var(--bg) 360px) no-repeat,var(--bg);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:620px;padding:0 16px}
+h1{font-size:36px;font-weight:800;letter-spacing:-.03em;margin:26px 0 4px;background:linear-gradient(90deg,#0b3ea8,#1f6bff 55%,#5aa2ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1::before{content:"";display:inline-block;width:32px;height:32px;border-radius:10px;margin-right:10px;vertical-align:-5px;background:radial-gradient(circle at 30% 30%,#fff 0 3px,transparent 4px),radial-gradient(circle at 70% 30%,#fff 0 3px,transparent 4px),radial-gradient(circle at 30% 70%,#fff 0 3px,transparent 4px),radial-gradient(circle at 70% 70%,#fff 0 3px,transparent 4px),linear-gradient(135deg,#2f7bff,#0b3ea8);box-shadow:0 8px 18px #1f6bff55}
+.sub{font-size:16px;margin:0 0 18px}
+.tabs{background:var(--soft);border:0;border-radius:16px;padding:4px;gap:4px}
+.tabs button{border:0;border-radius:12px;padding:10px 4px;font-weight:700}
+.tabs button.on{background:var(--card);color:var(--ac);box-shadow:0 4px 14px #1f6bff26}
+.btn{background:linear-gradient(135deg,#3a85ff,#1250d6);border-radius:12px;box-shadow:0 8px 20px #1f6bff40}
+.btn.g{background:var(--card);color:var(--ac);border:1px solid var(--bd);box-shadow:none}
+textarea,.in{border-radius:14px;border:1px solid var(--bd);background:var(--card)}textarea:focus,.in:focus{outline:2px solid #1f6bff55;border-color:var(--ac)}
+.st{color:var(--tx)}
+.bo{background:linear-gradient(160deg,#2a6bff,#0b2f8a);color:#eaf1ff;border-radius:24px;padding:14px 10px 10px;box-shadow:0 22px 50px #1f6bff45}
+.pb b{color:#fff}.nm{color:#d6e5ff}
+.pit{background:linear-gradient(#dbe8ff,#bcd3fb);border-color:#7fa6ee;border-radius:12px}
+.pit:not(:disabled){background:linear-gradient(#fff,#d3e4ff);border-color:#fff;box-shadow:0 0 0 2px #ffffff55}
+.pit small{color:#4a6bb5}
+.pit.tz{background:linear-gradient(#0b1f5c,#06123a);border-color:#06123a}.pit.tz small{color:#8fb2f5}
+.pit.mk{outline:3px solid #ffd45c}
+.pit u{border-color:#6f95e0}
+.ds i{background:radial-gradient(circle at 35% 30%,#6aa6ff,#0a2a7a);box-shadow:0 0 0 1px #0a2a7a99}
+.bar{background:#0b2f8a}.bar div{background:linear-gradient(90deg,#8fc0ff,#fff)}
+.mv{border-radius:10px}.mv:hover{background:var(--soft)}
+.chips span{background:var(--card);border-color:var(--bd);border-radius:10px}
+.mg{border-radius:16px;box-shadow:0 4px 14px #1f6bff14}.mg.u{background:linear-gradient(135deg,#3a85ff,#1250d6);color:#fff;border:0}.mg.u small{color:#d6e5ff}
+details>summary.btn{display:inline-block}
+footer{padding:34px 0 40px}
+</style>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+:root{--bg:#fafafa;--card:#fff;--pit:#f4f5f7;--tx:#1a1b1e;--mu:#6b6f76;--bd:#e4e5e8;--ac:#5e6ad2;--soft:#f1f2f5}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08090a;--card:#101113;--pit:#16181a;--tx:#f2f3f4;--mu:#8a8f98;--bd:#23252a;--ac:#6872e0;--soft:#17181b}}
+:root[data-theme="dark"]{--bg:#08090a;--card:#101113;--pit:#16181a;--tx:#f2f3f4;--mu:#8a8f98;--bd:#23252a;--ac:#6872e0;--soft:#17181b}
+body{background:radial-gradient(520px 220px at 50% 0,#5e6ad226,transparent) no-repeat,var(--bg);font:400 14.5px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.w{max-width:600px}
+h1{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--tx);font-size:20px;font-weight:600;letter-spacing:-.02em;margin:28px 0 4px}
+h1::before{width:18px;height:18px;border-radius:50%;margin-right:10px;vertical-align:-3px;box-shadow:none;background:conic-gradient(from 200deg,#9aa3f7,#5e6ad2,#9aa3f7)}
+.sub{color:var(--mu);font-size:14px;margin:0 0 20px}
+.tabs{background:none;border:0;border-bottom:1px solid var(--bd);border-radius:0;padding:0;gap:0}
+.tabs button{border-radius:0;padding:10px 12px;font-weight:500;font-size:13.5px;color:var(--mu);border-bottom:2px solid transparent;margin-bottom:-1px;background:none;box-shadow:none}
+.tabs button.on{background:none;color:var(--tx);border-bottom-color:var(--ac);box-shadow:none}
+.btn{background:var(--ac);color:#fff;border-radius:6px;font-weight:500;font-size:13.5px;padding:8px 14px;box-shadow:inset 0 0 0 1px #ffffff24,0 1px 2px #0003}
+.btn.g{background:transparent;color:var(--tx);border:1px solid var(--bd);box-shadow:none;padding:7px 12px}.btn.g:hover{background:var(--soft)}
+textarea,.in{background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:6px;font:400 14px Inter,system-ui,sans-serif}
+textarea:focus,.in:focus{outline:0;border-color:var(--ac);box-shadow:0 0 0 3px #5e6ad233}
+.st{font-weight:500;font-size:14px}
+.bo{background:var(--card);border:1px solid var(--bd);border-radius:12px;color:var(--tx);box-shadow:none;padding:12px 10px 10px}
+.pb{color:var(--mu);font-weight:500;font-size:13px}.pb b{color:var(--tx);font-size:20px;font-weight:600}.nm{color:var(--mu);font-weight:500;font-size:13px}
+.pit{background:var(--pit);border:1px solid var(--bd);border-radius:8px;box-shadow:none}
+.pit:not(:disabled){background:var(--soft);border-color:#5e6ad28c;box-shadow:none}.pit:not(:disabled):hover{background:#5e6ad21f}
+.pit small{color:var(--mu);font-size:10.5px}
+.pit.tz{background:#5e6ad22e;border-color:var(--ac)}.pit.tz small{color:var(--ac)}.pit u{border-color:var(--ac)}
+.pit.mk{outline:2px solid var(--ac);outline-offset:1px}
+.ds i{background:var(--tx);opacity:.92;box-shadow:0 0 0 1px var(--pit)}
+.bar{background:var(--bd);height:4px}.bar div{background:var(--ac)}
+.bd{border-radius:6px;padding:2px 8px;font-weight:500;font-size:12px}
+.mv{border-radius:6px;font-size:13.5px}.mv.on,.mv:hover{background:var(--soft)}
+.chips span{border-radius:6px;background:transparent;border-color:var(--bd);font-size:12.5px}
+.mg{border-radius:8px;box-shadow:none;background:var(--card)}.mg.u{background:var(--soft);color:var(--tx);border:1px solid var(--bd)}.mg.u small{color:var(--mu)}
+.hm{text-align:center;padding:48px 0 24px}.hm h2{font-size:32px;font-weight:600;letter-spacing:-.03em;margin:0 0 8px}.hm p{color:var(--mu);margin:0 auto 28px;max-width:380px}.big{padding:14px 52px;font-size:16px;border-radius:8px}.hm .row{justify-content:center;margin-top:20px}h1{cursor:pointer}
+.tabs button{padding:10px 4px;font-size:13px}
+footer{color:var(--mu);font-size:12px;padding:34px 0 40px}
+</style>
+</head>
+<body>
+<div class="w">
+<h1>togyzkumalak</h1>
+<p class="sub">Тоғызқұмалақтың ақылды қозғалтқышы: партияны талда, ойыншымен ойна, ЖИ-ге дебют үйрет.</p>
+<div id="home"><div class="hm"><h2>Тоғызқұмалақ ойна</h2><p>Қозғалтқышпен, досыңмен онлайн немесе адаммен таныстырып ойнаңыз.</p>
+<button class="btn big" id="pl0">Ойнау</button>
+<div class="row"><button class="btn g" data-go="on">Онлайн</button><button class="btn g" data-go="an">Партияны талдау</button><button class="btn g" data-go="ch">ЖИ-мен сөйлесу</button></div></div></div>
+<div id="app" hidden>
+<div class="tabs"><button data-m="an">Талдау</button><button data-m="play" class="on">Қозғалтқыш</button><button data-m="pl">Ойыншылар</button><button data-m="ch">Сөйлесу</button><button data-m="on">Онлайн</button></div>
+
+<div id="pan" hidden>
+<textarea id="rec" placeholder="1. 43 98&#10;2. 99 44x&#10;3. 12 13 …"></textarea>
+<div class="row"><button class="btn" id="go">Талдау</button><button class="btn g" id="ex">Мысал партия</button><label class="btn g" style="cursor:pointer">.txt файл<input type="file" id="fl" accept=".txt,text/plain" hidden></label></div>
+<div class="note" id="msg">Ойын кестесінен көшіріп қойыңыз: «1. 43 98», «44x». Бірінші сан — қай отау, екінші — қай отауға түседі, x — тұздық. Тек отау нөмірлері де болады.</div>
+</div>
+
+<div id="ppl">
+<div class="row"><select id="ec" class="in"><option value="0">Ақ (1-ші)</option><option value="1">Қара (2-ші)</option></select><button class="btn g" id="nw">Қайта бастау</button><button class="btn g" id="lv">Деңгей: Толық күш</button><button class="btn g" id="toan">Осы партияны талдау</button></div>
+<details id="bk"><summary class="btn g">+ Қозғалтқышқа ойын үйрету</summary>
+<textarea id="bg" placeholder="Партияларды қойыңыз (бос жолмен бөліңіз). Қозғалтқыш осы жүрістерді дебют ретінде біледі."></textarea>
+<div class="row"><button class="btn" id="ba">Үйрету</button><span class="note" id="bm"></span></div></details>
+</div>
+
+<div id="pp" hidden>
+<div class="row"><select id="sel" class="in"></select><select id="sd" class="in"><option value="0">Мен 1-ші жүремін</option><option value="1">Мен 2-ші жүремін</option></select></div>
+<details><summary class="btn g">+ Ойыншы қосу</summary>
+<div class="row"><input id="pn" class="in" placeholder="Ойыншының аты" style="flex:1"><select id="ps" class="in"><option value="0">Ол 1-ші болған</option><option value="1">Ол 2-ші болған</option></select></div>
+<textarea id="pg" placeholder="Оның партияларын қойыңыз. Партияларды бос жолмен бөліңіз."></textarea>
+<div class="row"><button class="btn" id="pa">Сақтау</button></div></details>
+<div class="note" id="pm"></div>
+</div>
+
+<div id="po" hidden>
+<div class="row"><input id="oc" class="in" placeholder="Бөлме коды, мысалы: abc12" style="flex:1"><button class="btn" id="og">Қосылу</button></div>
+<div class="row"><button class="btn g" id="on2">Қайта бастау</button><button class="btn g" id="ox">Шығу</button><span class="note" id="om"></span></div>
+<div class="note">Бірінші кірген — ақ, екінші — қара, қалғандар көрермен. Кодты досыңызға жіберіңіз: ол да осы бетті ашып, сол кодпен қосылады.</div>
+</div>
+<div id="ch" hidden>
+<div id="cl"></div>
+<textarea id="ci" placeholder="ЖИ-ге жазыңыз: сұрақ қойыңыз немесе тоғызқұмалақ туралы түсіндіріңіз…" style="min-height:70px"></textarea>
+<div class="row"><button class="btn" id="cs">Жіберу</button><button class="btn g" id="cc">Тазалау</button><span class="note" id="cn"></span></div>
+</div>
+<div class="st" id="stt"></div>
+<div id="bd"></div>
+<div id="inf"></div>
+<div id="res"></div>
+</div>
+<footer>togyzkumalak</footer>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const G=["Бриллиант","Тамаша","Үздік","Өте жақсы","Жақсы","Дәлсіздік","Қателік","Олақ қате"],GM=["!!","!","","","","?!","?","??"];
+const init=()=>({p:Array(18).fill(9),k:[0,0],t:[-1,-1],turn:0,over:false});
+const cl=s=>({p:s.p.slice(),k:s.k.slice(),t:s.t.slice(),turn:s.turn,over:s.over});
+const legal=s=>{const r=[];for(let i=0;i<9;i++)if(s.p[s.turn*9+i]>0)r.push(i);return r};
+function drop(s,x){if(x===s.t[0])s.k[0]++;else if(x===s.t[1])s.k[1]++;else s.p[x]++}
+function mov(s,i){const pl=s.turn,f=pl*9+i,n=s.p[f];s.p[f]=0;let last;
+ if(n===1){last=(f+1)%18;drop(s,last)}else{for(let k=0;k<n;k++)drop(s,(f+k)%18);last=(f+n-1)%18}
+ const opp=pl===0?last>=9:last<9;
+ if(opp&&last!==s.t[0]&&last!==s.t[1]){const c=s.p[last];
+  if(c%2===0){s.k[pl]+=c;s.p[last]=0}
+  else if(c===3&&s.t[pl]<0&&last%9!==8&&(s.t[1-pl]<0||s.t[1-pl]%9!==last%9)){s.t[pl]=last;s.k[pl]+=3;s.p[last]=0}}
+ s.turn=1-pl;
+ if(!legal(s).length){for(let j=pl*9;j<pl*9+9;j++){s.k[pl]+=s.p[j];s.p[j]=0}s.over=true}
+ if(s.k[0]>=82||s.k[1]>=82)s.over=true;return s}
+function ev(s,pl){const d0=s.k[0]-s.k[1];let v;
+ if(s.over){v=d0>0?1000+d0:d0<0?-1000+d0:0}
+ else{let a=0,b=0;for(let i=0;i<9;i++){a+=s.p[i];b+=s.p[9+i]}v=d0+14*(s.t[0]>=0)-14*(s.t[1]>=0)+.15*(a-b)}
+ return pl===0?v:-v}
+let DL=1e18,AB=false,NC=0;
+function nm(s,d,a,b){if(++NC%512===0&&Date.now()>DL)AB=true;if(AB)return 0;if(s.over||d===0)return ev(s,s.turn);let best=-1e9;
+ const ch=legal(s).map(i=>{const c=mov(cl(s),i);return{c,e:ev(c,s.turn)}}).sort((x,y)=>y.e-x.e);
+ for(const x of ch){const v=-nm(x.c,d-1,-b,-a);if(v>best)best=v;if(best>a)a=best;if(a>=b)break}return best}
+const root=(s,d)=>legal(s).map(i=>({i,v:-nm(mov(cl(s),i),d-1,-1e9,1e9)}));
+function think(s,ms,md){DL=Date.now()+ms;let res=root(s,2);for(let d=3;d<=md;d++){AB=false;const r=root(s,d);if(AB)break;res=r}AB=false;DL=1e18;return res}
+const wp=v=>100/(1+Math.exp(-v/14));
+const tick=()=>new Promise(r=>setTimeout(r,12));
+
+let mode='play',g=init(),hist=[],lvl=6,busy=false,A=null,cur=0,me=0,cp='',src='',lastF=-1,learned=null,P={};
+try{P=JSON.parse(localStorage.getItem('jq_pl')||'{}')}catch(e){}
+let BK={g:0,b:{}};try{BK=JSON.parse(localStorage.getItem('jq_bk'))||BK}catch(e){}
+const bsv=()=>{try{localStorage.setItem('jq_bk',JSON.stringify(BK))}catch(e){}};
+const key=s=>s.p.join()+'|'+s.k+'|'+s.t+'|'+s.turn,esc=s=>s.replace(/[&<>"]/g,c=>'&#'+c.charCodeAt(0)+';'),on=()=>mode==='on'?'Қарсылас':cp&&P[cp]?cp:'Қозғалтқыш';
+const sv=()=>{try{localStorage.setItem('jq_pl',JSON.stringify(P))}catch(e){}};
+function fillSel(){$('sel').innerHTML=Object.keys(P).map(n=>`<option>${esc(n)}</option>`).join('')||'<option value="">Ойыншы жоқ</option>'}
+
+function dots(n){if(!n)return'';const c=n<=30?2:n<=60?3:4,d=c<3?11:c===3?9:7,r=Math.ceil(n/c),st=Math.max(2,Math.min(d+2,(78-d)/Math.max(1,r-1)));return `<div class="ds" style="--d:${d}px;--c:${c};--st:${st.toFixed(1)}px">${'<i></i>'.repeat(n)}</div>`}
+function board(s,click){const o=me*9;
+ const cell=(i,mine,top)=>{const tz=s.t.indexOf(i)>=0,n=s.p[i];
+  const pit=`<button class="pit${tz?' tz':''}${i===lastF?' mk':''}" data-i="${i%9}" ${click&&mine&&n>0?'':'disabled'}><small>${i%9+1}</small>${tz?'<u></u>':dots(n)}</button>`,num=`<div class="nm">${tz?0:n}</div>`;
+  return `<div>${top?num+pit:pit+num}</div>`};
+ const T=[8,7,6,5,4,3,2,1,0].map(j=>cell((o+9+j)%18,0,1)).join(''),B=[0,1,2,3,4,5,6,7,8].map(j=>cell(o+j,1,0)).join('');
+ const nt=mode==='an'?'Ойыншы 2':on()+' ('+(me?'ақ':'қара')+')',nb=mode==='an'?'Ойыншы 1':'Сіз ('+(me?'қара':'ақ')+')';
+ $('bd').innerHTML=`<div class="bo"><div class="pb"><span>${esc(nt)}</span><span>қазан <b>${s.k[1-me]}</b></span></div><div class="gr">${T}</div><div class="gr" style="margin-top:6px">${B}</div><div class="pb" style="padding:8px 6px 2px"><span>${nb}</span><span>қазан <b>${s.k[me]}</b></span></div></div>`}
+function show(){if(mode!=='an'){if(mode==='play'&&g.over&&learned!==hist){learned=hist;const w=g.k[0]>g.k[1]?0:g.k[1]>g.k[0]?1:-1;if(w>=0&&hist.length){learn(BK,[hist.map(p=>({p}))],w);bsv();src=(src?src+' ':'')+'Партия кітапханаға қосылды.'}}board(g,!busy&&!g.over&&g.turn===me);
+  $('stt').textContent=g.over?(g.k[me]>81?'Жеңдіңіз! ':g.k[1-me]>81?on()+' жеңді. ':'Тең ойын. ')+`Есеп ${g.k[me]}:${g.k[1-me]}`:busy?on()+' ойланып жатыр…':g.turn===me?'Жүріс сіздікі. Отауды таңдаңыз.':on()+' жүрісін күтіңіз…';
+  if(mode==='on'&&seat<0)$('stt').textContent='Көрермен режимі: тек қарап отырсыз.';
+  $('inf').innerHTML=mode==='on'?`<div class="note">${esc(onMsg)}</div>`:src?`<div class="note">${src}</div>`:'';$('res').innerHTML=''}
+ else if(A){lastF=cur?A.pl[cur-1].who*9+A.pl[cur-1].i-1:-1;board(A.st[cur],false);drawA()}
+ else{lastF=-1;board(init(),false);$('stt').textContent='Партияны талдаңыз, тақта осында ашылады.';$('inf').innerHTML='';$('res').innerHTML=''}}
+$('bd').onclick=async e=>{const b=e.target.closest('.pit');if(!b||mode==='an'||busy||g.over||g.turn!==me||(mode==='on'&&seat<0))return;
+ const i=+b.dataset.i;hist.push(i+1);lastF=g.turn*9+i;mov(g,i);src='';if(mode==='on'){sendMv();return show()}if(g.over)return show();await bot()};
+async function bot(){busy=true;show();await tick();let pk=null;const B=cp?P[cp]&&P[cp].b[key(g)]:BK.b[key(g)];
+ if(B){const e=Object.entries(B).filter(([i])=>g.p[g.turn*9+ +i-1]>0),t=e.reduce((a,x)=>a+x[1],0);
+  if(t){let r=Math.random()*t;for(const x of e){r-=x[1];if(r<=0){pk=+x[0]-1;break}}if(pk==null)pk=+e[0][0]-1;src=cp?`${esc(cp)} бұл позицияда ${t} рет ойнаған (оның ойындарынан).`:'Жүріс дебют кітапханасынан алынды.'}}
+ if(pk==null){const sc=think(g,cp?700:lvl===3?500:2500,14).sort((a,b)=>b.v-a.v);let c=sc[0];if(cp||lvl===3){const nr=sc.filter(x=>x.v>=sc[0].v-3);c=nr[Math.random()*nr.length|0]}pk=c.i;src=cp&&P[cp]?`Бұл позиция ${esc(cp)} ойындарында жоқ, қозғалтқыш ойнады.`:''}
+ hist.push(pk+1);lastF=g.turn*9+pk;mov(g,pk);busy=false;show()}
+document.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>setMode(b.dataset.m));
+function setMode(m){mode=m;if(m==='ch'){document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.m===m));['pan','ppl','pp','po','stt','bd','inf','res'].forEach(x=>$(x).hidden=true);$('ch').hidden=false;return renderChat()}$('ch').hidden=true;['stt','bd','inf','res'].forEach(x=>$(x).hidden=false);document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.m===m));
+ $('pan').hidden=m!=='an';$('ppl').hidden=m==='an'||m==='on';$('po').hidden=m!=='on';$('lv').hidden=m==='pl';$('pp').hidden=m!=='pl';$('bk').hidden=m!=='play';$('ec').hidden=m!=='play';
+ if(m==='pl'){cp=$('sel').value;me=+$('sd').value;$('pm').textContent=cp&&P[cp]?`${cp}: ${P[cp].g} партия негізінде ойнайды.`:'Алдымен «Ойыншы қосу» арқылы ойыншының партияларын енгізіңіз.'}else{cp='';me=m==='play'?+$('ec').value:m==='on'?Math.max(seat,0):0}
+ if(m!=='an'&&m!=='on'){g=init();hist=[];busy=false;src='';lastF=-1}
+ if((m==='play'||m==='pl')&&me===1)bot();else show()}
+$('nw').onclick=()=>{g=init();hist=[];busy=false;src='';lastF=-1;if(me===1)bot();else show()};
+$('lv').onclick=()=>{lvl=lvl===3?6:3;$('lv').textContent='Деңгей: '+(lvl===3?'Шебер':'Толық күш');$('nw').onclick()};
+$('toan').onclick=()=>{$('rec').value=hist.join(' ');setMode('an');run()};
+$('ex').onclick=()=>{let s=init(),m=[];for(let k=0;k<36&&!s.over;k++){const l=legal(s),i=l[Math.random()*l.length|0];m.push(i+1);mov(s,i)}$('rec').value=m.join(' ');run()};
+$('go').onclick=run;
+$('fl').onchange=e=>{const f=e.target.files[0];if(f)f.text().then(t=>{$('rec').value=t;run()})};
+
+function parse(t){const out=[];for(const ln of t.split(/\n/)){if(/[^\d\s.,;)xX×-]/.test(ln))continue;let tk=ln.replace(/[,;]/g,' ').trim().split(/\s+/).filter(Boolean);
+ if(tk.length>=3&&/^\d+[.)]?$/.test(tk[0])&&parseInt(tk[0])===Math.floor(out.length/2)+1)tk.shift();
+ for(let x of tk){x=x.replace(/^\d+[.)]+/,'');const m=x.match(/^([1-9])([1-9])?([xX×])?$/);if(m)out.push({p:+m[1],d:m[2]?+m[2]:0,x:!!m[3]})}}return out}
+async function run(){const mv=parse($('rec').value);if(!mv.length){$('msg').textContent='Жүрістер табылмады. Отау нөмірлерін (1–9) жазыңыз.';return}
+ $('go').disabled=true;let s=init();const st=[s],pl=[];let err='';
+ for(let k=0;k<mv.length;k++){const i=mv[k].p-1;
+  if(s.over||s.p[s.turn*9+i]<=0){err=`${k+1}-жүріс (отау ${mv[k].p}) ережеге сай емес: отау бос немесе партия аяқталған. Талдау осы жерде тоқтады.`;break}
+  $('msg').textContent=`Талдауда: ${k+1} / ${mv.length}`;await tick();
+  const sc=root(s,5).sort((a,b)=>b.v-a.v),pv=sc.find(x=>x.i===i),wb=wp(sc[0].v),L=wb-wp(pv.v);let q;
+  if(pv.v>=sc[0].v-1e-9){const gap=sc[1]?wb-wp(sc[1].v):0;q=gap>=18&&wb>=45?0:gap>=7?1:2}else q=L<3?3:L<7?4:L<14?5:L<25?6:7;
+  const f=s.turn*9+i,nn=s.p[f],ld=(nn===1?f+1:f+nn-1)%18,wt=s.t[s.turn],s2=mov(cl(s),i),bad=(mv[k].d&&mv[k].d!==ld%9+1)||(mv[k].x&&s2.t[s.turn]===wt);
+  pl.push({i:mv[k].p,b:sc[0].i+1,q,w:wp(pv.v),wb,who:s.turn,bad});s=s2;st.push(s)}
+ A={st,pl,err};cur=st.length-1;$('go').disabled=false;
+ const nb=pl.filter(x=>x.bad).length;$('msg').textContent=err||`Дайын: ${pl.length} жүріс талданды.`+(nb?` ⚠ ${nb} жүріс жазбамен сәйкес келмейді (соңғы отау немесе тұздық).`:'');show()}
+function drawA(){const{st,pl}=A,n=pl.length;
+ const w1=cur<n?(pl[cur].who===0?pl[cur].wb:100-pl[cur].wb):(n?(pl[n-1].who===0?pl[n-1].w:100-pl[n-1].w):50);
+ $('stt').textContent=cur===0?'Бастапқы позиция':`${cur}-жүрістен кейінгі позиция`;
+ let h=`<div class="bar"><div style="width:${w1.toFixed(0)}%"></div></div><div class="note">Бірінші ойыншының жеңіс мүмкіндігі: ${w1.toFixed(0)}%</div>
+ <div class="row"><button class="btn g" onclick="mvTo(cur-1)">◀</button><button class="btn g" onclick="mvTo(cur+1)">▶</button>`;
+ if(cur<n)h+=`<span class="note">Келесі: отау ${pl[cur].i}${pl[cur].b!==pl[cur].i?`, қозғалтқыш ұсынады: отау ${pl[cur].b}`:' — қозғалтқыш та осыны таңдайды'}</span>`;
+ $('inf').innerHTML=h+'</div>';
+ const cnt=Array(8).fill(0);pl.forEach(x=>cnt[x.q]++);
+ $('res').innerHTML=`<div class="chips">${cnt.map((c,q)=>c?`<span><b>${c}</b> ${G[q]}</span>`:'').join('')}</div><div class="list">`+pl.map((x,k)=>`<div class="mv${cur===k+1?' on':''}" onclick="mvTo(${k+1})"><span>${Math.floor(k/2)+1}.${k%2?'..':''}</span><span>отау ${x.i}${x.bad?' ⚠':''}</span><span class="bd g${x.q}">${GM[x.q]} ${G[x.q]}</span><small>${x.w.toFixed(0)}%</small></div>`).join('')+'</div>'+(A.err?`<p class="note">${A.err}</p>`:'')}
+function mvTo(k){if(!A)return;cur=Math.max(0,Math.min(A.st.length-1,k));show()}
+$('sel').onchange=$('sd').onchange=()=>setMode('pl');
+$('ec').onchange=()=>setMode('play');
+$('pa').onclick=()=>{const n=$('pn').value.trim().slice(0,30),sd=+$('ps').value,gs=$('pg').value.split(/\n\s*\n/).map(parse).filter(a=>a.length);
+ if(!n||!gs.length){$('pm').textContent='Атын және кемінде бір партияны жазыңыз.';return}
+ const pl=P[n]||(P[n]={g:0,b:{}});const{mv,cut}=learn(pl,gs,sd);
+ sv();fillSel();$('sel').value=n;setMode('pl');$('pm').textContent=`${n}: ${gs.length} партия, ${mv} жүріс қосылды.`+(cut?` ${cut} партия ереже қатесінен ерте тоқтады.`:'')+' Енді ойнаңыз.';
+ $('pn').value=$('pg').value=''};
+function learn(st,gs,sd){let mv=0,cut=0;for(const a of gs){let s=init(),e=[];st.g++;for(const m of a){if(s.over||s.p[s.turn*9+m.p-1]<=0){cut++;break}if(sd===2||s.turn===sd)e.push([key(s),m.p,s.turn]);mov(s,m.p-1)}
+ const w=s.over?(s.k[0]>s.k[1]?0:s.k[1]>s.k[0]?1:-1):-2;
+ for(const[k,p,t]of e){const o=st.b[k]||(st.b[k]={});o[p]=(o[p]||0)+(st===BK&&w===t?3:1);mv++}}return{mv,cut}}
+$('ba').onclick=()=>{const gs=$('bg').value.split(/\n\s*\n/).map(parse).filter(a=>a.length);if(!gs.length){$('bm').textContent='Партия жазыңыз.';return}
+ const r=learn(BK,gs,2);bsv();$('bm').textContent=`${gs.length} партия, ${r.mv} жүріс үйренді.`+(r.cut?` ${r.cut} партия ереже қатесінен ерте тоқтады.`:'');$('bg').value=''};
+let CH=[];try{CH=JSON.parse(localStorage.getItem('jq_chat'))||[]}catch(e){}
+const csv=()=>{try{localStorage.setItem('jq_chat',JSON.stringify(CH.slice(-60)))}catch(e){}};
+function renderChat(){const el=$('cl');el.innerHTML=CH.length?'':'<div class="note">ЖИ-мен сөйлесіңіз. Ол әңгімені есте сақтайды: тоғызқұмалақ туралы түсіндірсеңіз, келесі жолы да біледі.</div>';
+ for(const m of CH){const d=document.createElement('div');d.className='mg '+(m.r==='user'?'u':'a');const s=document.createElement('small');s.textContent=m.r==='user'?'Сіз':'ЖИ';d.append(s,document.createTextNode(m.c));el.append(d)}}
+const INSTR='Сен togyzkumalak сайтындағы ЖИ-серіксің. Қазақша, қарапайым әрі достық үлгіде сөйле. Пайдаланушы саған тоғызқұмалақ ережелерін, дебюттерін, стратегиясын түсіндіруі мүмкін: оны зейінді қабылда, қысқаша растап, әңгіме барысында есте сақта. Қате болса, сыпайы түрде түзет. Ереже: 9 отау, әр отауда 9 құмалақ; жүріс — отаудағы құмалақтарды сағат тіліне қарсы тарату (біріншісі сол отауға түседі); соңғысы қарсыластың отауына түсіп, саны жұп болса, ол қазанға алынады; үш болса және ол 9-шы отау болмаса, тұздық болады; 82 құмалақ жинаған жеңеді. Жазба: «43» — 4-отаудан жүріп, соңғы құмалақ 3-отауға түсті, «x» — тұздық. Білмесң, білмейтініңді айт.';
+$('cs').onclick=async()=>{const t=$('ci').value.trim();if(!t||$('cs').disabled)return;
+ let sample=null;try{sample=await claude.use('sample')}catch(e){}
+ if(!sample){$('cn').textContent='Бұл мүмкіндік қазір қолжетімсіз (сайтты claude.ai ішінде ашыңыз).';return}
+ CH.push({r:'user',c:t});$('ci').value='';csv();CH.push({r:'assistant',c:''});renderChat();$('cs').disabled=true;$('cn').textContent='';
+ const msgs=CH.slice(-41,-1).map(m=>({role:m.r,content:m.c}));while(msgs.length&&msgs[0].role!=='user')msgs.shift();
+ msgs[0].content=INSTR+(hist.length?'\n\nСоңғы ойын жазбасы (отау нөмірлері): '+hist.join(' '):'')+'\n\n'+msgs[0].content;
+ try{const r=await sample(msgs,{cache:false,onText:({text})=>{CH[CH.length-1].c=text;renderChat()}});CH[CH.length-1].c=r.text}
+ catch(e){CH.pop();CH.pop();$('ci').value=t;$('cn').textContent=e&&e.code==='not_granted'?'Рұқсат берілмеді.':e&&e.code==='rate_limited'?'Тым жиі, сәл күтіңіз.':'Қате шықты, қайта көріңіз.'}
+ csv();renderChat();$('cs').disabled=false};
+$('cc').onclick=()=>{CH=[];csv();renderChat()};
+let seat=-1,RM=null,onMsg='',offs=[];const myT=Date.now(),myId=Math.random().toString(36).slice(2,9);
+function sendMv(){if(RM)RM.emit('mv',{h:hist.join('')}).catch(()=>{})}
+function applyH(h){if(!/^[1-9]*$/.test(h)||h.length<=hist.length||h.slice(0,hist.length)!==hist.join(''))return;
+ let s=cl(g);const nh=hist.slice();for(let k=hist.length;k<h.length;k++){const i=+h[k]-1;if(s.over||s.p[s.turn*9+i]<=0)return;lastF=s.turn*9+i;mov(s,i);nh.push(+h[k])}g=s;hist=nh;show()}
+function leaveOn(){offs.forEach(f=>f());offs=[];if(RM){RM.leave().catch(()=>{});RM=null}seat=-1;onMsg=''}
+$('og').onclick=async()=>{const code=$('oc').value.toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,12);
+ if(!code){$('om').textContent='Бөлме кодын жазыңыз (әріп не сан).';return}
+ let room=null;try{room=await claude.use('room')}catch(e){}
+ if(!room){$('om').textContent='Онлайн қолжетімсіз: сайтты claude.ai ішінде ашып, жүйеге кіріңіз.';return}
+ leaveOn();try{RM=await room.join('tz-'+code)}catch(e){$('om').textContent='Бөлмеге қосыла алмады.';return}
+ g=init();hist=[];lastF=-1;$('om').textContent='';RM.presence({id:myId,t:myT});
+ offs.push(RM.onPeers(c=>{const ps=[...c.peers].filter(p=>p.kind==='viewer'&&p.presence&&p.presence.id).sort((a,b)=>a.presence.t-b.presence.t||(a.presence.id<b.presence.id?-1:1));
+  const k=ps.findIndex(p=>p.presence.id===myId);seat=k>1?-1:k;me=seat<0?0:seat;
+  onMsg=ps.length<2?`Бөлме «${code}»: қарсылас күтілуде. Кодты досыңызға айтыңыз.`:seat<0?'Бөлме «'+code+'»: көрермен.':`Бөлме «${code}»: сіз ${seat?'қара':'ақ'} түспен ойнайсыз.`;
+  if(c.joined.length&&hist.length)setTimeout(sendMv,400);show()}));
+ offs.push(RM.on('mv',m=>{if(m.sameTab)return;applyH(String((m.data&&m.data.h)||''))}));
+ offs.push(RM.on('rs',m=>{if(m.sameTab)return;g=init();hist=[];lastF=-1;show()}));show()};
+$('on2').onclick=()=>{if(!RM)return;g=init();hist=[];lastF=-1;RM.emit('rs',{}).catch(()=>{});show()};
+$('ox').onclick=()=>{leaveOn();g=init();hist=[];lastF=-1;$('om').textContent='Бөлмеден шықтыңыз.';show()};
+function go(m){$('home').hidden=true;$('app').hidden=false;setMode(m)}
+$('pl0').onclick=()=>go('play');document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+document.querySelector('h1').onclick=()=>{$('home').hidden=false;$('app').hidden=true};
+fillSel();setMode('play');
+</script>
+</body>
+</html>
