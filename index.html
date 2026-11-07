@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="kk">
 <head>
@@ -117,6 +118,15 @@ textarea:focus,.in:focus{outline:0;border-color:var(--ac);box-shadow:0 0 0 3px #
 .hm{text-align:center;padding:48px 0 24px}.hm h2{font-size:32px;font-weight:600;letter-spacing:-.03em;margin:0 0 8px}.hm p{color:var(--mu);margin:0 auto 28px;max-width:380px}.big{padding:14px 52px;font-size:16px;border-radius:8px}.hm .row{justify-content:center;margin-top:20px}h1{cursor:pointer}
 .tabs button{padding:10px 4px;font-size:13px}
 footer{color:var(--mu);font-size:12px;padding:34px 0 40px}
+/* PlayOK taqta */
+.bo{background:#f0b060;border:0;border-radius:14px;color:#3d2a1d;padding:14px 10px 12px}
+.pb{color:#4a3020}.pb b{color:#2e1d12}.nm{color:#3d2a1d;font-weight:700;font-size:14px}
+.pit{background:#cf8f4f;border:2.5px solid #5c3b2a;border-radius:10px}
+.pit:not(:disabled){background:#d89a58;border-color:#4a2f20}.pit:not(:disabled):hover{background:#e3ab68}
+.pit small{color:#6d4528;font-weight:700}
+.pit.tz{background:#5c3b2a;border-color:#4a2f20}.pit.tz small{color:#e0b078}.pit u{display:none}
+.pit.mk{outline:3px solid #fff;outline-offset:-1px}
+.ds i{background:#5c3b2a;opacity:1;box-shadow:0 0 0 1px #e9b982}
 </style>
 </head>
 <body>
@@ -214,7 +224,7 @@ function board(s,click){const o=me*9;
  const T=[8,7,6,5,4,3,2,1,0].map(j=>cell((o+9+j)%18,0,1)).join(''),B=[0,1,2,3,4,5,6,7,8].map(j=>cell(o+j,1,0)).join('');
  const nt=mode==='an'?'Ойыншы 2':on()+' ('+(me?'ақ':'қара')+')',nb=mode==='an'?'Ойыншы 1':'Сіз ('+(me?'қара':'ақ')+')';
  $('bd').innerHTML=`<div class="bo"><div class="pb"><span>${esc(nt)}</span><span>қазан <b>${s.k[1-me]}</b></span></div><div class="gr">${T}</div><div class="gr" style="margin-top:6px">${B}</div><div class="pb" style="padding:8px 6px 2px"><span>${nb}</span><span>қазан <b>${s.k[me]}</b></span></div></div>`}
-function show(){if(mode!=='an'){if(mode==='play'&&g.over&&learned!==hist){learned=hist;const w=g.k[0]>g.k[1]?0:g.k[1]>g.k[0]?1:-1;if(w>=0&&hist.length){learn(BK,[hist.map(p=>({p}))],w);bsv();src=(src?src+' ':'')+'Партия кітапханаға қосылды.'}}board(g,!busy&&!g.over&&g.turn===me);
+function show(){if(mode!=='an'){if(mode==='play'&&g.over&&learned!==hist){learned=hist;const w=g.k[0]>g.k[1]?0:g.k[1]>g.k[0]?1:-1;if(w>=0&&hist.length){learn(BK,[hist.map(p=>({p}))],w);bsv();sbPush(hist.join(''));src=(src?src+' ':'')+'Партия кітапханаға қосылды.'}}board(g,!busy&&!g.over&&g.turn===me);
   $('stt').textContent=g.over?(g.k[me]>81?'Жеңдіңіз! ':g.k[1-me]>81?on()+' жеңді. ':'Тең ойын. ')+`Есеп ${g.k[me]}:${g.k[1-me]}`:busy?on()+' ойланып жатыр…':g.turn===me?'Жүріс сіздікі. Отауды таңдаңыз.':on()+' жүрісін күтіңіз…';
   if(mode==='on'&&seat<0)$('stt').textContent='Көрермен режимі: тек қарап отырсыз.';
   $('inf').innerHTML=mode==='on'?`<div class="note">${esc(onMsg)}</div>`:src?`<div class="note">${src}</div>`:'';$('res').innerHTML=''}
@@ -222,7 +232,7 @@ function show(){if(mode!=='an'){if(mode==='play'&&g.over&&learned!==hist){learne
  else{lastF=-1;board(init(),false);$('stt').textContent='Партияны талдаңыз, тақта осында ашылады.';$('inf').innerHTML='';$('res').innerHTML=''}}
 $('bd').onclick=async e=>{const b=e.target.closest('.pit');if(!b||mode==='an'||busy||g.over||g.turn!==me||(mode==='on'&&seat<0))return;
  const i=+b.dataset.i;hist.push(i+1);lastF=g.turn*9+i;mov(g,i);src='';if(mode==='on'){sendMv();return show()}if(g.over)return show();await bot()};
-async function bot(){busy=true;show();await tick();let pk=null;const B=cp?P[cp]&&P[cp].b[key(g)]:BK.b[key(g)];
+async function bot(){busy=true;show();await tick();let pk=null;const B=cp?P[cp]&&P[cp].b[key(g)]:BK.b[key(g)]||SH.b[key(g)];
  if(B){const e=Object.entries(B).filter(([i])=>g.p[g.turn*9+ +i-1]>0),t=e.reduce((a,x)=>a+x[1],0);
   if(t){let r=Math.random()*t;for(const x of e){r-=x[1];if(r<=0){pk=+x[0]-1;break}}if(pk==null)pk=+e[0][0]-1;src=cp?`${esc(cp)} бұл позицияда ${t} рет ойнаған (оның ойындарынан).`:'Жүріс дебют кітапханасынан алынды.'}}
  if(pk==null){const sc=think(g,cp?700:lvl===3?500:2500,14).sort((a,b)=>b.v-a.v);let c=sc[0];if(cp||lvl===3){const nr=sc.filter(x=>x.v>=sc[0].v-3);c=nr[Math.random()*nr.length|0]}pk=c.i;src=cp&&P[cp]?`Бұл позиция ${esc(cp)} ойындарында жоқ, қозғалтқыш ойнады.`:''}
@@ -273,9 +283,9 @@ $('pa').onclick=()=>{const n=$('pn').value.trim().slice(0,30),sd=+$('ps').value,
  $('pn').value=$('pg').value=''};
 function learn(st,gs,sd){let mv=0,cut=0;for(const a of gs){let s=init(),e=[];st.g++;for(const m of a){if(s.over||s.p[s.turn*9+m.p-1]<=0){cut++;break}if(sd===2||s.turn===sd)e.push([key(s),m.p,s.turn]);mov(s,m.p-1)}
  const w=s.over?(s.k[0]>s.k[1]?0:s.k[1]>s.k[0]?1:-1):-2;
- for(const[k,p,t]of e){const o=st.b[k]||(st.b[k]={});o[p]=(o[p]||0)+(st===BK&&w===t?3:1);mv++}}return{mv,cut}}
+ for(const[k,p,t]of e){const o=st.b[k]||(st.b[k]={});o[p]=(o[p]||0)+((st===BK||st===SH)&&w===t?3:1);mv++}}return{mv,cut}}
 $('ba').onclick=()=>{const gs=$('bg').value.split(/\n\s*\n/).map(parse).filter(a=>a.length);if(!gs.length){$('bm').textContent='Партия жазыңыз.';return}
- const r=learn(BK,gs,2);bsv();$('bm').textContent=`${gs.length} партия, ${r.mv} жүріс үйренді.`+(r.cut?` ${r.cut} партия ереже қатесінен ерте тоқтады.`:'');$('bg').value=''};
+ const r=learn(BK,gs,2);bsv();gs.forEach(a=>sbPush(a.map(m=>m.p).join('')));$('bm').textContent=`${gs.length} партия, ${r.mv} жүріс үйренді.`+(r.cut?` ${r.cut} партия ереже қатесінен ерте тоқтады.`:'');$('bg').value=''};
 let CH=[];try{CH=JSON.parse(localStorage.getItem('jq_chat'))||[]}catch(e){}
 const csv=()=>{try{localStorage.setItem('jq_chat',JSON.stringify(CH.slice(-60)))}catch(e){}};
 function renderChat(){const el=$('cl');el.innerHTML=CH.length?'':'<div class="note">ЖИ-мен сөйлесіңіз. Ол әңгімені есте сақтайды: тоғызқұмалақ туралы түсіндірсеңіз, келесі жолы да біледі.</div>';
@@ -310,6 +320,11 @@ $('og').onclick=async()=>{const code=$('oc').value.toLowerCase().replace(/[^a-z0
  offs.push(RM.on('rs',m=>{if(m.sameTab)return;g=init();hist=[];lastF=-1;show()}));show()};
 $('on2').onclick=()=>{if(!RM)return;g=init();hist=[];lastF=-1;RM.emit('rs',{}).catch(()=>{});show()};
 $('ox').onclick=()=>{leaveOn();g=init();hist=[];lastF=-1;$('om').textContent='Бөлмеден шықтыңыз.';show()};
+let SH={g:0,b:{}};const SB={u:'https://iygzrmtafvkggtcnkybo.supabase.co',k:'sb_publishable_93C21ltcbaPoWGcTKM02cg_Fy9hm0qG'};
+const sbh=()=>({apikey:SB.k,...(SB.k.startsWith('eyJ')?{Authorization:'Bearer '+SB.k}:{}),'Content-Type':'application/json'});
+async function sbPush(h){if(!SB.u||!h)return;try{await fetch(SB.u+'/rest/v1/games',{method:'POST',headers:{...sbh(),Prefer:'return=minimal'},body:JSON.stringify({moves:h})})}catch(e){}}
+async function sbPull(){if(!SB.u)return;try{const r=await fetch(SB.u+'/rest/v1/games?select=moves&approved=eq.true&limit=2000',{headers:sbh()}),a=await r.json();if(!Array.isArray(a))return;SH={g:0,b:{}};learn(SH,a.map(x=>[...x.moves].map(p=>({p:+p}))),2)}catch(e){}}
+sbPull();
 function go(m){$('home').hidden=true;$('app').hidden=false;setMode(m)}
 $('pl0').onclick=()=>go('play');document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
 document.querySelector('h1').onclick=()=>{$('home').hidden=false;$('app').hidden=true};
