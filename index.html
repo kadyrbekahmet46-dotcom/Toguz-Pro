@@ -362,9 +362,10 @@ async function auth(kind){const lg=$('em').value.trim().toLowerCase(),password=$
  if(password.length<6){$('am').textContent='Пароль кемінде 6 таңба болсын.';return}
  const email=lg+'@tz-login.com';
  $('am').textContent='…';
- try{const r=await fetch(SB.u+(kind==='su'?'/auth/v1/signup':'/auth/v1/token?grant_type=password'),{method:'POST',headers:{apikey:SB.k,'Content-Type':'application/json'},body:JSON.stringify({email,password})}),d=await r.json();
+ try{if(kind==='su'){const r0=await fetch(SB.u+'/functions/v1/signup',{method:'POST',headers:{apikey:SB.k,'Content-Type':'application/json'},body:JSON.stringify({login:lg,password})}),d0=await r0.json().catch(()=>({}));if(!r0.ok)throw new Error(d0.error==='exists'?'already registered':(d0.error||('HTTP '+r0.status)))}
+  const r=await fetch(SB.u+'/auth/v1/token?grant_type=password',{method:'POST',headers:{apikey:SB.k,'Content-Type':'application/json'},body:JSON.stringify({email,password})}),d=await r.json();
   if(!r.ok)throw new Error(d.msg||d.message||d.error_description||('HTTP '+r.status));
-  if(d.access_token){setAu(d);try{localStorage.setItem('tz_lg',lg)}catch(e){}if(kind==='su')await rpc('set_nick',{n:lg}).catch(()=>{});$('pw').value='';$('am').textContent='';lobbyUI()}else $('am').textContent='Тіркелу аяқталмады: Supabase-те «Confirm email» өшірулі болуы керек.'}
+  if(d.access_token){setAu(d);try{localStorage.setItem('tz_lg',lg)}catch(e){}if(kind==='su')await rpc('set_nick',{n:lg}).catch(()=>{});$('pw').value='';$('am').textContent='';lobbyUI()}else $('am').textContent='Кіру сәтсіз аяқталды.'}
  catch(e){const m=e.message||'';$('am').textContent=/already|registered/i.test(m)?'Бұл логин бос емес.':/invalid login|credentials/i.test(m)?'Логин немесе пароль қате.':'Қате: '+m}}
 $('li').onclick=()=>auth('li');$('su').onclick=()=>auth('su');
 $('lo').onclick=()=>{AU=null;ASV();MID=0;MST='';seat=-1;g=init();hist=[];lastF=-1;lobbyUI()};
